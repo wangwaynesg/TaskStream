@@ -18,14 +18,13 @@ public class Main {
         DataManager dm = new DataManager("./data/data.txt");
         ArrayList<Task> tasksData = dm.loadData();
 
-<<<<<<< HEAD
         printDeadlinesUsingStreams(tasksData);
 
 //        System.out.println("Printing deadlines");
 //        printDeadlines(tasksData);
 
         System.out.println("Total number of deadlines: " + countDeadlinesUsingStreams(tasksData));
-=======
+
 //        System.out.println("Printing deadlines");
 //        printDeadlines(tasksData);
 //
@@ -35,7 +34,6 @@ public class Main {
             System.out.println(t);
         }
 
->>>>>>> lambdas
 
     }
 
@@ -60,14 +58,7 @@ public class Main {
         tasksData.stream()
                 .forEach(System.out::println);
     }
-
-    public static void printDeadlinesUsingStreams(ArrayList<Task> tasksData) {
-        System.out.println("Printing deadlines using streams");
-        tasksData.stream()
-                .filter(t -> t instanceof Deadline)
-                .forEach(System.out::println);
-    }
-
+    
     public static int countDeadlinesUsingStreams(ArrayList<Task> tasksData) {
         System.out.println("Calculating count using streams");
         int count = 0;
